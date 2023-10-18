@@ -9,15 +9,17 @@ type AllType = {
   position: number;
   color: string;
   weight: number
-}
+};
+type obj1 = Pick<AllType, "name" | "position" | "color" | "weight">;
+type obj2 = Pick<AllType, "name" | "position" | "color" | "weight">;
 
-function compare (top, bottom): AllType {
+function compare (top: obj1, bottom: obj2): AllType {
   return {
     name: top.name,
     color: top.color,
     position: bottom.position,
     weight: bottom.weight,
-  }
+  };
 }
 
 export {};
